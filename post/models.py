@@ -3,16 +3,18 @@ from django.db import models
 # Create your models here.
 
 
-class Product(models.Model):
-    image = models.ImageField(null=True, blank=True)
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    price = models.IntegerField()
-    rate = models.FloatField()
-    create_date = models.DateField(auto_now_add=True)
-    modified_date = models.DateField(auto_now=True)
+class Category(models.Model):
+    img = models.ImageField(null=True, blank=True)
+    name = models.CharField(max_length=50)
 
-class Review(models.Model):
-    title = models.TextField()
-    characteristics = models.TextField()
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+class Product(models.Model):
+    image = models.ImageField(null=True,blank=True)
+    title = models.CharField(max_length = 50)
+    extra_inf = models.TextField()
+    price = models.IntegerField()
+    post_date = models.DateTimeField(auto_now_add =True)
+
+class Comment(models.Model):
+    text = models.TextField()
+    created_date = models.DateField(auto_now_add =True)
+    post = models.ForeignKey(Product, on_delete=models.CASCADE)
