@@ -5,11 +5,12 @@ from django.conf.urls.static import static
 from internetshop.settings import MEDIA_URL,MEDIA_ROOT
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main),
     path('products/', product_view),
-    path('products/<int:id>', product_detail_view),
+    path('products/<int:id>/', product_detail_view),
     path('categories/', categories_view)
 ]
 

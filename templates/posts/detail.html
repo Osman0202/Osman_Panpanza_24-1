@@ -34,10 +34,10 @@
             <h5>{{ product.modified_date }}</h5>
         </div>
         <div class="reviews">
-            {% for review in reviews %}
+            {% for review in comments %}
                 <div class="review">
                     <h6>{{ review.title }}</h6>
-                    <p>{{ review.characteristics }}</p>
+                    <p>{{ review.created_date }}</p>
                 </div>
             {% endfor %}
         </div>
