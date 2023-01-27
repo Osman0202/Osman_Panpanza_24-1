@@ -33,11 +33,11 @@
             <h5>{{ product.created_date }}</h5>
             <h5>{{ product.modified_date }}</h5>
         </div>
-        <div class="reviews">
-            {% for review in comments %}
+        <div class="comments">
+            {% for comment in comments %}
                 <div class="review">
-                    <h6>{{ review.title }}</h6>
-                    <p>{{ review.created_date }}</p>
+                    <h6>{{ comment.title }}</h6>
+                    <p>{{ comment.created_date }}</p>
                 </div>
             {% endfor %}
         </div>
