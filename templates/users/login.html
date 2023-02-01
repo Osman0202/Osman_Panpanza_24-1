@@ -1,10 +1,9 @@
 {% extends 'layosts/index.html' %}
 
 {% block content %}
-    <form action="/products/create/" method="post">
+    <form action="/users/login/" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Create Product">
+        <input type="submit" value="Login">
     </form>
-
 {% endblock %}
