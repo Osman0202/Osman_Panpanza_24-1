@@ -6,13 +6,12 @@
 {% endblock %}
 
 {% block content %}
-    <style type="text/css">
-        .categories {
-            width: 50%;
-            margin-left: 10%;
-        }
-    </style>
-
+        <form action="/products" method="get">
+            <label>
+                <input type="text" name="search">
+            </label>
+            <input type="submit" value="Search">
+        </form>
 
     <div class="products">
         {% for product in products %}
@@ -30,5 +29,13 @@
             </div>
         {% endfor %}
     </div>
+        <div>
+            <div class="pages">
+                {% for page in max_page %}
+                <a href="/products/?page = {{ page }}">
+                    <button>{{ page }}</button>
+                </a>
+                {% endfor %}
+        </div>
 
 {% endblock %}
