@@ -113,6 +113,7 @@ class RegisterView(ListView, CreateView):
             else:
                 form.add_error('password1', 'Paroli ne sovpadayut')
 
+
         return render(request, 'users/register.html', context={
             'form': form
         })
